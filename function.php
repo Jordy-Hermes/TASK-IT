@@ -1,6 +1,5 @@
-
 <?php
-require_once ("lib/ConnectBdd.php");
+
 
 function isValid($string){
 	return isset($string) && !empty($string);}
@@ -32,6 +31,7 @@ function connexion($email, $password)
 			echo ("Le mail n'existe pas");
 			return $isConnected;
 		}
+
 }
 
 ?>
