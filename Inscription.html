@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EntryPage</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="styleinscription.css">
 </head>
 <body>
     <div class="boxform">
@@ -17,10 +17,6 @@
                 </div>
                 <div class="description">
                 Inscrivez vous facilement et venez partager l’expérience Task-IT
-                </div>
-                <!--Continuez avec google-->
-                <div class="solution">
-                    ------------- ou utilisez votre Email ------------
                 </div>
             </div>
             <form name="form inscription" action="./function.php" method="post">
@@ -36,18 +32,22 @@
                     <label for="Company">Votre Companie</label>
                     <input type="text" name="Company" id="Company">
                 </div>
-                <div class="saisietxt">
-                    <label for="Email">Votre Email</label>
-                    <input type="text" name="Email" id="Email">
+                <label for="email">Votre email</label>
+                <div>
+                <input type="email" id="email" required>
                 </div>
                 <div class="saisietxt">
                     <label for="Password">Votre Mot de passe</label>
                     <input type="text" name="Password" id="Password">
                 </div>
+                <div class="saisietxt">
+                    <label for="Password">Confirmer votre mot de passe</label>
+                    <input type="text" name="Password" id="Password">
+                </div>
                 <div>
-                    <button type="submit" class="bouton">
+                    <input type="submit" class="bouton" name="bouton">
                         Confirmer
-                    </button>
+                    </input>
                 </div>
             </form>
         </div>
