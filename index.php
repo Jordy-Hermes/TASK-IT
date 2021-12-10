@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EntryPage</title>
+    <title>Inscription</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
                     ------------- ou utilisez votre Email ------------
                 </div>
             </div>
-            <form name="form inscription" action="./function.php" method="post">
+            <form name="forminscription" action="./inscription.php" method="post">
                 <div class="saisietxt">
                     <label for="lastname">Nom</label>
                     <input type="text" name="lastname" id="lastname">
@@ -33,21 +33,19 @@
                     <input type="text" name="firstname" id="firstname">
                 </div>
                 <div class="saisietxt">
-                    <label for="Company">Votre Companie</label>
-                    <input type="text" name="Company" id="Company">
+                    <label for="Company">Votre Compagnie</label>
+                    <input type="text" name="entreprise" id="entreprise">
                 </div>
                 <div class="saisietxt">
                     <label for="Email">Votre Email</label>
-                    <input type="text" name="Email" id="Email">
+                    <input type="text" name="email" id="email">
                 </div>
                 <div class="saisietxt">
                     <label for="Password">Votre Mot de passe</label>
-                    <input type="text" name="Password" id="Password">
+                    <input type="password" name="password" id="password">
                 </div>
                 <div>
-                    <button type="submit" class="bouton">
-                        Confirmer
-                    </button>
+                    <input type="submit" name="submitInscription" value="S'inscireuh">
                 </div>
             </form>
         </div>
