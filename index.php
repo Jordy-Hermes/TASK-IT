@@ -23,7 +23,7 @@
                     ------------- ou utilisez votre Email ------------
                 </div>
             </div>
-            <form name="form inscription" action="./function.php" method="post">
+            <form name="form inscription" action="./inscription.php" method="post">
                 <div class="saisietxt">
                     <label for="lastname">Nom</label>
                     <input type="text" name="lastname" id="lastname">
