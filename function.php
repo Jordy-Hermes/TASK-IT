@@ -1,8 +1,8 @@
 <?php
 
+	
 function isValid($string){
-	return isset($string) && !empty($string);
-}
+	return isset($string) && !empty($string);}
 
 function connectDb(){
 	$username = "root";
@@ -28,23 +28,27 @@ function addUser($nom, $prenom, $entreprise, $email, $password) {
                 echo ("Cet e-mail existe déjà.");
             }
         }
-	}
+    }
 
 function connexion($email, $password)
 {
+	
 	$hpassword = sha1($password);
 	$isConnected=false;
+	$db = connectDb();
+	$result = $db->prepare("SELECT * FROM user WHERE email=?");
+	$result->execute(array($email));
+	$rows = $result->rowCount();
 
-	$result = $db->prepare("SELECT * FROM USER WHERE email=?");
-	$result = $db->execute(array($email));
-	$rows = mysql_num_rows($result);
 	if ($rows == 1)
 		{
-			$row = mysql_fetch_array($result);
+			$row= $result->fetch();
 			if($row['password']==$hpassword)
 			{
 				$isConnected=True;
+				echo ("OK");
 				return $isConnected;
+				
 			}
 			else
 			{
@@ -59,5 +63,6 @@ function connexion($email, $password)
 		}
 
 }
+
 
 ?>

@@ -1,0 +1,161 @@
+body
+{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+}
+
+.boxform
+{
+    height: 100%;
+    width: 40%;
+}
+
+.logotaskit
+{
+    padding-top: 150px;
+    padding-left: 330px;
+    width: 90px;
+    height: 90px;
+}
+.dispoform
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+    width: 100%;
+    height: 60%;
+}
+.annonceinscription
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: static;
+    width: 454px;
+    height: 74px;
+    left: 0px;
+    top: 0px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 36px 0px;
+}
+.titre
+ {
+    position: static;
+    width: 433px;
+    height: 49px;
+    left: 0px;
+    top: 0px;
+    
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    text-align: center;
+    
+    color: #525252;
+ 
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 3px 0px;
+ }
+ .description
+{
+    position: static;
+    width: 454px;
+    height: 22px;
+    left: 0px;
+    top: 52px;
+
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+
+    color: #525252;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    padding-left: 25px;
+}
+.saisietxt
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 13px 10px;
+
+    position: static;
+    width: 420px;
+    height: 45px;
+    left: 0px;
+    top: 23px;
+
+    border: 1px solid #DED2D9;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 4px 0px;
+}
+label 
+{
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label 
+{
+    margin: .4rem 0;
+    
+}
+
+.bouton
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 10px 12px;
+
+    position: static;
+    width: 420px;
+    height: 50px;
+    left: 0px;
+    top: 468px;
+
+    background: #F5BC4B;
+    border-radius: 6px;
+    border: none;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 32px 0px;
+}
+.imagetaskit
+{
+    width: 60%;
+    text-align: center;
+    object-fit: cover;
+    height: 100vh;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleinscription.css">
 </head>
 <body>
     <div class="boxform">
@@ -18,12 +18,8 @@
                 <div class="description">
                 Inscrivez vous facilement et venez partager l’expérience Task-IT
                 </div>
-                <!--Continuez avec google-->
-                <div class="solution">
-                    ------------- ou utilisez votre Email ------------
-                </div>
             </div>
-            <form name="forminscription" action="./inscription.php" method="post">
+            <form name="form inscription" action="./inscription.php" method="post">
                 <div class="saisietxt">
                     <label for="lastname">Nom</label>
                     <input type="text" name="lastname" id="lastname">
@@ -36,16 +32,22 @@
                     <label for="Company">Votre Compagnie</label>
                     <input type="text" name="entreprise" id="entreprise">
                 </div>
-                <div class="saisietxt">
-                    <label for="Email">Votre Email</label>
-                    <input type="text" name="email" id="email">
+                <label for="email">Votre email</label>
+                <div>
+                <input type="email" id="email" required>
                 </div>
                 <div class="saisietxt">
                     <label for="Password">Votre Mot de passe</label>
                     <input type="password" name="password" id="password">
                 </div>
+                <div class="saisietxt">
+                    <label for="Password">Confirmer votre mot de passe</label>
+                    <input type="text" name="Password" id="Password">
+                </div>
                 <div>
-                    <input type="submit" name="submitInscription" value="S'inscireuh">
+                    <input type="submit" class="bouton" name="bouton">
+                        Confirmer
+                    </input>
                 </div>
             </form>
         </div>
