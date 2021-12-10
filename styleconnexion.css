@@ -155,7 +155,5 @@ label
     text-align: center;
     object-fit: cover;
     height: 100vh;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
 }
 
