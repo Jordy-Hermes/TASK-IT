@@ -3,6 +3,7 @@
 try
 {
 $db = new PDO('mysql:host=localhost;dbname=taskit;charset=utf8', 'root', '');
+
 }
 catch (Exception $e)
 {
@@ -13,8 +14,6 @@ function isValid($string){
 	return isset($string) && !empty($string);}
 
 
-if (isset($_POST['submit'])) {
-    
     //attribution données du formulaire à une variable sécurisée
     $nom = htmlspecialchars($_POST['firstname']);
     $prenom = htmlspecialchars($_POST['lastname']);
@@ -28,9 +27,7 @@ if (isset($_POST['submit'])) {
 		$insertuser = $db->prepare("INSERT INTO user (firstname, lastname, entreprise, email, password) VALUES (?, ?, ?, ?, ?)");
 		$insertuser->execute(array($nom, $prenom, $entreprise, $email, $password));
 
-	}
 	
-
 }
 
 ?>
