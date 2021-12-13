@@ -5,8 +5,6 @@ require_once("function.php");
 
 if (isset($_POST["submitInscription"])){
 
-    echo("tj");
-
     $nom = htmlspecialchars($_POST['lastname']);
     $prenom = htmlspecialchars($_POST['firstname']);
     $entreprise = htmlspecialchars($_POST['entreprise']);
