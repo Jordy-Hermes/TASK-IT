@@ -1,27 +1,33 @@
 <?php
+session_start();
+
 require_once ("function.php");
 
 if (isset($_POST['connexion'])) 
-{	echo("ok");
+{	
 
-    
     //attribution données du formulaire à une variable sécurisée
-    $email = htmlspecialchars($_POST['Email']);
-    $password = htmlspecialchars($_POST['Password']);
+    $email = htmlspecialchars($_POST['email']);
+    $password = sha1($_POST['password']);
 
-    // Test avec la fonction isValid si les champs du formulaire ne sont pas vide
-    if (isValid($_POST['Email']) &&  isValid($_POST['Password']))
-    {
+    connexion($email, $password);
+	
+
+    // if (isValid($email) &&  isValid($password))
+    // {
     	
-    	$connected = false;   	
-      	$connected = connexion($email, $password);
-      	if ($connected==false)
-      	{
-      		header("Location:./test.php");
-      	}
+    // 	$connected = false;   	
+    //   	$connected = connexion($email, $password);
+    //   	if ($connected==false)
+    //   	{
+    //   		header("Location:./connexion.php");
+    //   	}
+	// 	else {
+	// 		header("Location:./dashboard.php");
+	// 	}
       	
 
-	}
+	// }
 
 }
 

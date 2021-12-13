@@ -1,6 +1,5 @@
 <?php
 
-	
 function isValid($string){
 	return isset($string) && !empty($string);}
 
@@ -20,9 +19,10 @@ function addUser($nom, $prenom, $entreprise, $email, $password) {
             $reqEmail->execute(array($email));
             $mailExist = $reqEmail->rowCount();
 
-            if ($mailExist == 0) {
+            if ($mailExist == 1) {
                 $insertuser = $db->prepare("INSERT INTO user (firstname, lastname, entreprise, email, password) VALUES (?, ?, ?, ?, ?)");
                 $insertuser->execute(array($nom, $prenom, $entreprise, $email, $password));
+				header("Location:formConnexion.php");
             }
             else {
                 echo ("Cet e-mail existe déjà.");
@@ -32,35 +32,59 @@ function addUser($nom, $prenom, $entreprise, $email, $password) {
 
 function connexion($email, $password)
 {
-	
-	$hpassword = sha1($password);
-	$isConnected=false;
+	$erreurConnexion = "";
 	$db = connectDb();
-	$result = $db->prepare("SELECT * FROM user WHERE email=?");
-	$result->execute(array($email));
-	$rows = $result->rowCount();
+	$result = $db->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
+	$result->execute(array($email, $password));
+    $userexist = $result->rowCount(); //compte le nombre de rangés existantes avec les informations du formulaire dans la bdd
+    
+	if ($userexist == 1)
+        {
+            $userinfo = $result->fetch();
+            $_SESSION['id'] = $userinfo['id'];
+            $_SESSION['email'] = $userinfo['email'];
+            $_SESSION['password'] = $userinfo['password'];
+            header("Location: ./dashboard.php?id=".$_SESSION['id']);
+        }
+        else
+        {
+            $erreurConnexion = "Il n'y a pas de membres avec ces identifiants";
+        }
 
-	if ($rows == 1)
-		{
-			$row= $result->fetch();
-			if($row['password']==$hpassword)
-			{
-				$isConnected=True;
-				echo ("OK");
-				return $isConnected;
+
+	
+	
+	
+	
+	// $hpassword = sha1($password);
+	// $email = "";
+	// $isConnected=false;
+	// $db = connectDb();
+	// $result = $db->prepare("SELECT * FROM user WHERE email=?");
+	// $result->execute(array($email));
+	// $rows = $result->rowCount();
+
+	// if ($rows == 1)
+	// 	{
+	// 		$row= $result->fetch();
+	// 		if($row['password']==$hpassword)
+	// 		{
+	// 			$isConnected=True;
+	// 			echo ("OK");
+	// 			return $isConnected;
 				
-			}
-			else
-			{
-				echo("Mot de passe incorrect");
-				return $isConnected;
-			}
-		}
-	else
-		{
-			echo ("Le mail n'existe pas");
-			return $isConnected;
-		}
+	// 		}
+	// 		else
+	// 		{
+	// 			echo("Mot de passe incorrect");
+	// 			return $isConnected;
+	// 		}
+	// 	}
+	// else
+	// 	{
+	// 		echo ("Le mail n'existe pas");
+	// 		return $isConnected;
+	// 	}
 
 }
 
