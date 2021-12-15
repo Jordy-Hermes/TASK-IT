@@ -13,22 +13,11 @@ function connectDb(){
 function addUser($nom, $prenom, $entreprise, $email, $password) {
 
 		$db = connectDb();
-		
-        if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $reqEmail = $db->prepare("SELECT * FROM user");
-            $reqEmail->execute(array($email));
-            $mailExist = $reqEmail->rowCount();
 
-            if ($mailExist == 1) {
-                $insertuser = $db->prepare("INSERT INTO user (firstname, lastname, entreprise, email, password) VALUES (?, ?, ?, ?, ?)");
-                $insertuser->execute(array($nom, $prenom, $entreprise, $email, $password));
-				header("Location:formConnexion.php");
-            }
-            else {
-                echo ("Cet e-mail existe déjà.");
-            }
-        }
-    }
+        $insertuser = $db->prepare("INSERT INTO user (firstname, lastname, entreprise, email, password) VALUES (?, ?, ?, ?, ?)");
+        $insertuser->execute(array($nom, $prenom, $entreprise, $email, $password));
+		header("Location:formConnexion.php");
+}
 
 function connexion($email, $password)
 {
@@ -49,13 +38,7 @@ function connexion($email, $password)
         else
         {
             $erreurConnexion = "Il n'y a pas de membres avec ces identifiants";
-        }
-
-
-	
-	
-	
-	
+        }	
 	// $hpassword = sha1($password);
 	// $email = "";
 	// $isConnected=false;
@@ -87,6 +70,5 @@ function connexion($email, $password)
 	// 	}
 
 }
-
 
 ?>
