@@ -1,0 +1,50 @@
+version: '2'
+ 
+services:
+  # Database
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: taskit
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    networks:
+      - dev
+  phpmyadmin:
+  # phpmyadmin
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8090:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root 
+    networks:
+      - dev
+  #php
+  web:
+    depends_on:
+      - db
+    image: webdevops/php-apache
+    ports:
+      - '8000:80'
+    restart: always
+    volumes:
+      - ./task:/app
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root
+    networks:
+      - dev
+networks:
+  dev:
+volumes:
+  db_data:
+  task:
