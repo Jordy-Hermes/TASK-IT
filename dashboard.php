@@ -23,14 +23,11 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 <body>
     <div class="dashbarre">
         <img class="logotaskit" src="img/logotaskit2.png"></img>
-        <!-- <input type="submit" class="bouton" name="boutondeco">
-            Deconnexion
-        </input> -->
+        <input type="button" value="Déconnexion" onclick="window.location.href='deconnexion.php';"/>
     </div>    
     <div class="dashboard">
         <div class="imageuser">
             <img class="imageUser" src="img/imageuser.png"></img>
-            <input type="button" value="Déconnexion" onclick="window.location.href='deconnexion.php';" />
         </div>
         <div class="contain">
         

@@ -32,7 +32,6 @@ CREATE TABLE IF NOT EXISTS `project` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `iduser` int(11) NOT NULL,
-  `color` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_foreign_iduser` (`iduser`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -60,3 +59,7 @@ CREATE TABLE IF NOT EXISTS `user_project` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 COMMIT;
+
+
+
+

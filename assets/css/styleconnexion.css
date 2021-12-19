@@ -64,7 +64,12 @@ p {
 	font-style: normal;
 	font-size: 15px;
 	line-height: 19px;
-	color: #828282db;
+	background: #F5BC4B;
+	color: #fff;
+	padding: 10px 25px;
+	margin-left: 30px;
+	border-radius: 50px;
+	width: 14%;
 }
 
   
