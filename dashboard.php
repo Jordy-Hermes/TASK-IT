@@ -22,15 +22,17 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 </head>
 <body>
     <div class="dashbarre">
-        <img class="logotaskit" src="img/logotaskit2.png"></img>
-        <input type="button" value="Déconnexion" onclick="window.location.href='deconnexion.php';"/>
+            <img class="logotaskit" src="img/logotaskit2.png"></img>
+        <div class="button">
+            <input type="submit"  value="Déconnexion" onclick="window.location.href='deconnexion.php';" />
+        </div>
     </div>    
     <div class="dashboard">
-        <div class="imageuser">
+        <div>
             <img class="imageUser" src="img/imageuser.png"></img>
         </div>
         <div class="contain">
-        
+            
         </div>
     </div>
 </body>
