@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `colonne` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `nombremax` int(11) NOT NULL,
+  `order` int(11) NOT NULL,
   `idproject` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_foreign_idproject` (`idproject`)
@@ -21,6 +22,8 @@ CREATE TABLE IF NOT EXISTS `item` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `tag` text NOT NULL,
+  `affected` varchar(255) NOT NULL,
   `idcolonne` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_foreign_idcolonne` (`idcolonne`)
