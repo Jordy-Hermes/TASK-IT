@@ -2,13 +2,22 @@
 session_start();
 require_once("function.php");
 
-if (isset($_GET['id']) && $_GET['id'] > 0) {
-    $bdd = connectDb();
-    $getId = intval($_GET['id']);
-    $result = $bdd->prepare('SELECT * FROM user WHERE id = ?');
-    $result->execute(array($getId));
-    $userinfo = $result->fetch();
-}
+$bdd = connectDb();
+
+$query = $bdd->prepare('SELECT * FROM user');
+$query->execute();
+$userinfo = $query->fetch();
+
+$result = $bdd->prepare('SELECT * FROM project');
+$result->execute();
+$projetinfo = $result->fetch();
+
+
+$nomUser = $userinfo["lastname"];
+$prenomUser = $userinfo["firstname"];
+$nameProject = $projetinfo["name"];
+$descriptionProject = $projetinfo["description"];
+
 ?>
 
 <!DOCTYPE html>
@@ -30,9 +39,23 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
     <div class="dashboard">
         <div>
             <img class="imageUser" src="img/imageuser.png"></img>
+            
+            
         </div>
         <div class="contain">
+<<<<<<< HEAD
             
+=======
+        <a href="addProject.php">Ajoutez un nouveau projet !</a>
+        <?php
+            echo("<p>Bienvenue sur votre tableau de bord, " . $nomUser . " " . $prenomUser . " !</p>");
+        ?>
+        </div>
+        <div class="listprojet">
+        <?php
+            echo("<p>Voici la liste de vos projets : " . $nameProject . " " . $descriptionProject . " !</p>");
+        ?>
+>>>>>>> 3c21fe5363cd015ed1be348d04a8ee876ba3417b
         </div>
     </div>
 </body>
