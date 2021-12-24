@@ -41,3 +41,23 @@ body
     background: #F5BC4B;
     border-radius: 6px;
 }
+.contain
+{
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    
+}
+.colonne
+{
+    background-color: brown;
+    display:flex;
+    flex-direction: column;
+    padding: 10%;
+    padding-bottom: 30%;
+    margin:1%;
+}
+.task
+{
+    background-color: crimson;
+}

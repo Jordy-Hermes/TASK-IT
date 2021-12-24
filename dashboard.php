@@ -43,9 +43,6 @@ $descriptionProject = $projetinfo["description"];
             
         </div>
         <div class="contain">
-<<<<<<< HEAD
-            
-=======
         <a href="addProject.php">Ajoutez un nouveau projet !</a>
         <?php
             echo("<p>Bienvenue sur votre tableau de bord, " . $nomUser . " " . $prenomUser . " !</p>");
@@ -53,9 +50,8 @@ $descriptionProject = $projetinfo["description"];
         </div>
         <div class="listprojet">
         <?php
-            echo("<p>Voici la liste de vos projets : " . $nameProject . " " . $descriptionProject . " !</p>");
+            echo("<p>Voici la liste de vos projets : " . $nameProject . " " . $descriptionProject . " </p>");
         ?>
->>>>>>> 3c21fe5363cd015ed1be348d04a8ee876ba3417b
         </div>
     </div>
 </body>
