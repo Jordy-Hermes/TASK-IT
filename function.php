@@ -6,7 +6,7 @@ function isValid($string){
 function connectDb(){
 	$username = "root";
 	$password = "root";
-	$db = new PDO("mysql:host=localhost:3306;dbname=taskit", $username, $password);
+	$db = new PDO("mysql:host=db;port=3306;dbname=taskit", $username, $password);
 	return $db;
 }
 	
