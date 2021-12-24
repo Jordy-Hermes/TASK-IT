@@ -4,11 +4,11 @@ require_once("function.php");
 
 $bdd = connectDb();
 
-$query = $bdd->prepare('SELECT * FROM user');
+$query = $bdd->prepare('SELECT * FROM user WHERE id=3');
 $query->execute();
 $userinfo = $query->fetch();
 
-$result = $bdd->prepare('SELECT * FROM project');
+$result = $bdd->prepare('SELECT * FROM project WHERE iduser=1');
 $result->execute();
 $projetinfo = $result->fetch();
 
@@ -45,12 +45,20 @@ $descriptionProject = $projetinfo["description"];
         <div class="contain">
         <a href="addProject.php">Ajoutez un nouveau projet !</a>
         <?php
+<<<<<<< HEAD
             echo("<p>Bienvenue sur votre tableau de bord, " . $nomUser . " " . $prenomUser . " !</p>");
         ?>
         </div>
         <div class="listprojet">
         <?php
             echo("<p>Voici la liste de vos projets : " . $nameProject . " " . $descriptionProject . " </p>");
+=======
+            while($projetinfo = $result->fetch()) {
+                echo("<h1>" . $nomUser . " " . $prenomUser . " !</h1></br>");
+                echo("<p>Voici la liste de vos projets : " . $nameProject . " Et la description " . $descriptionProject . " !</p>");
+            };
+            
+>>>>>>> 3943d8faab86380eb4177aa07581a7554ed5cf91
         ?>
         </div>
     </div>
