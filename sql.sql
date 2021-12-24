@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `project` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `iduser` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `color` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_foreign_iduser` (`iduser`)
